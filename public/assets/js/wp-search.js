@@ -45,11 +45,6 @@
 							// results are empty int
 							$(results).text('0')
 
-							// results are empty placeholder
-							if ( !$('#wp-search--no-results').length ) {
-								$(postList).prepend( 'nothing found' )
-							}
-
 						} else {
 
 							// show how many results we have
