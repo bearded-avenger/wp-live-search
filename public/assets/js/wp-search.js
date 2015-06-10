@@ -8,7 +8,6 @@
 		,	postList		 = '#wp-search--post-list'
 		,	results          = '#wp-search--results'
 		,	loader           = '#wp-search--loader'
-		,	ajaxurl			 = wp_search_vars.ajaxurl
 		,	api              = WP_API_Settings.root
 		,	timer
 
