@@ -7,3 +7,8 @@ WordPress search plugin that uses the REST API. This doesn't require pressing en
 ## Requirements
 
 WP REST API Plugin
+
+## Roadmap
+- styles 
+- options 
+- template function 
