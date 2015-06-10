@@ -18,7 +18,10 @@ class wpSearchShortcode{
 
 		?>
 		<div id="wp-search" class="wp-search">
-			<div id="wp-search--results"></div>
+			<div class="wp-search--results-wrap">
+				<span id="wp-search--results"></span>
+				<span>entries found</span>
+			</div>
 			<input type="text" id="wp-search--input" placeholder="Search...">
 			<ul id="wp-search--post-list"></ul>
 		</div>

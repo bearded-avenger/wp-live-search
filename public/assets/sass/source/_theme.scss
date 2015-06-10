@@ -1,0 +1,22 @@
+// Wrapper
+#wp-search {
+
+}
+
+// Results text
+#wp-search--results {
+
+}
+
+// List of posts
+#wp-search--post-list {
+	background:$color--main;
+}
+
+// The Item
+.wp-search--item {
+
+	&:hover {
+		background:$color--item-hover;
+	}
+}

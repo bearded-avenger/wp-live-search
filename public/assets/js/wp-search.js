@@ -8,10 +8,11 @@
 		,	postList		 = '#wp-search--post-list'
 		,	results          = '#wp-search--results'
 		,	loader           = '#wp-search--loader'
+		,	input  			 = '#wp-search--input'
 		,	api              = WP_API_Settings.root
 		,	timer
 
-		$('#wp-search--input').on('keyup', function () {
+		$( input ).on('keyup', function () {
 
 			// clear the previous timer
 			clearTimeout(timer)
@@ -36,7 +37,7 @@
 						$(postList).children().remove()
 
 						// show results
-						$(results).css('opacity',1)
+						$(results).parent().css('opacity',1)
 
 						// count results and show
 						if ( response.length == 0 ) {
@@ -71,10 +72,17 @@
 			// if there's no value then destroy the search
 			if ( val == '' ) {
 
-				console.log('search destroyed')
+				destroySearch()
 
 			}
 		})
+
+		function destroySearch(){
+
+			$( postList ).children().remove();
+			$( input ).val('');
+			$( results ).parent().css('opacity',0);
+		}
 	})
 
 })( jQuery, Backbone, _, WP_API_Settings );

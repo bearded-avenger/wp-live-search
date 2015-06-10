@@ -1,0 +1,9 @@
+// Structure
+$spacing:    		20px;
+$spacing--sm:    	$spacing / 2;
+$spacing--lg:     	$spacing * 2;
+
+// Colors
+$color--main:   	#EAEAEA;
+$color--accent:   	#007AAB;
+$color--item-hover:  lighten($color--main,4);
