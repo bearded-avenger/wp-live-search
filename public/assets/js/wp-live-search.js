@@ -15,12 +15,13 @@
 		,	api              = WP_API_Settings.root
 		,	timer
 
-		$( input ).on('keyup', function () {
+		$( input ).on('keyup keypress', function ( e ) {
 
 			// clear the previous timer
 			clearTimeout(timer)
 
-			var that        = this
+			var key         = e.which
+			,	that        = this
 			,	val 		= $.trim( $(this).val() )
 			,	valEqual    = val == $(that).val()
 			,	notEmpty    = '' !== val
@@ -29,6 +30,7 @@
 			// 600ms delay so we dont exectute excessively
 			timer = setTimeout(function() {
 
+				// don't proceed if the value is empty or not equal to itself
 				if ( !valEqual && !notEmpty )
 					return false;
 
@@ -40,7 +42,7 @@
 				}
 
 				// if we have more than 3 characters
-				if ( val.length >= 3 ) {
+				if ( val.length >= 3 || val.length >= 3 && 13 == key ) {
 
 					// show loader
 					$(loader).css('opacity',1);
