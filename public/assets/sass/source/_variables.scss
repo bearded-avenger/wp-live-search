@@ -9,3 +9,10 @@ $color--dark:        	darken($color--main,7);
 $color--accent:   		#5bc0de;
 $color--item-hover:  	lighten($color--main,4);
 $color--loader:      	$color--dark;
+
+// Input
+$input--height:        	$spacing--lg;
+
+// Helper
+$helper--size:         	13px;
+$helper--bg:            $color--accent;
