@@ -25,7 +25,8 @@
 			,	val 		= $.trim( $(this).val() )
 			,	valEqual    = val == $(that).val()
 			,	notEmpty    = '' !== val
-			,	url 		= api+'/posts?filter[s]='+val
+			,	type        = $(this).data('object-type')
+			,	url 		= api+'/'+type+'?filter[s]='+val
 
 			// 600ms delay so we dont exectute excessively
 			timer = setTimeout(function() {

@@ -10,7 +10,7 @@ class wpSearchShortcode{
 	public function shortcode( $atts, $content = null ) {
 
 		$defaults = array(
-			'type'	 		=> 'posts',
+			'type'	 		=> 'posts', // 'posts', 'pages'
 			'placeholder'	=> __('Search...','wp-live-search'),
 			'results' 		=> __('entries found','wp-live-search')
 		);
@@ -29,7 +29,7 @@ class wpSearchShortcode{
 			</div>
 
 			<div id="wpls--input-wrap">
-				<input itemprop="query-input" type="text" id="wpls--input" placeholder="<?php echo esc_attr( $atts['placeholder'] );?>">
+				<input itemprop="query-input" type="text" data-object-type="<?php echo esc_attr( $atts['type'] );?>" id="wpls--input" placeholder="<?php echo esc_attr( $atts['placeholder'] );?>">
 				<div id="wpls--loading" class="wpls--loading"><div class="wpls--loader"></div></div>
 			</div>
 
