@@ -73,8 +73,15 @@
 				destroySearch()
 
 			}
+
+		}).blur(function(){
+
+			destroySearch();
 		})
 
+		/**
+		*	Utility function to destroy the search
+		*/
 		function destroySearch(){
 
 			$( postList ).children().remove();
