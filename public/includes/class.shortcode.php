@@ -21,7 +21,7 @@ class wpSearchShortcode{
 		ob_start();
 
 		?>
-		<div id="wpls" class="wpls">
+		<div id="wpls" class="wpls" itemprop="potentialAction" itemscope itemtype="http://schema.org/SearchAction">
 
 			<div class="wpls--results-wrap">
 				<span id="wpls--results"></span>
@@ -29,11 +29,11 @@ class wpSearchShortcode{
 			</div>
 
 			<div id="wpls--input-wrap">
-				<input type="text" id="wpls--input" placeholder="<?php echo esc_attr( $atts['placeholder'] );?>">
+				<input itemprop="query-input" type="text" id="wpls--input" placeholder="<?php echo esc_attr( $atts['placeholder'] );?>">
 				<div id="wpls--loading" class="wpls--loading"><div class="wpls--loader"></div></div>
 			</div>
 
-			<ul id="wpls--post-list"></ul>
+			<ul itemprop="target" id="wpls--post-list"></ul>
 
 		</div>
 

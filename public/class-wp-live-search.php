@@ -38,6 +38,7 @@ class WP_Live_Search {
 
 		require WP_SEARCH_DIR.'/public/includes/underscore-template.php';
 		require WP_SEARCH_DIR.'/public/includes/class.shortcode.php';
+		require WP_SEARCH_DIR.'/public/includes/template-function.php';
 		require WP_SEARCH_DIR.'/public/includes/class.assets.php';
 	}
 
