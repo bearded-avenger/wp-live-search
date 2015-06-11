@@ -36,4 +36,26 @@
 		border:none;
 		padding:$spacing--sm;
 	}
+
+	.wp-search--item-title {
+		margin:5px auto;
+	}
+}
+
+// The Item
+.wp-search--item {
+	@include clearfix();
+}
+
+// Item image
+.wp-search--item-image {
+	float:left;
+	max-width:50px;
+	margin-right:$spacing--sm;
+}
+
+// Item title
+.wp-search--item-title {
+	display:inline-block;
+	overflow:hidden;
 }

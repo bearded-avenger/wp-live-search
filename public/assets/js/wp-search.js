@@ -24,6 +24,11 @@
 			// 600ms delay so we dont exectute excessively
 			timer = setTimeout(function() {
 
+				// what if the user only types 1 or two characters?
+				if ( val.length <= 2 ) {
+					console.log('you need more characters')
+				}
+
 				// if we have more than 3 characters and if value is teh same
 				if ( val.length >= 3 && val == $(that).val() ) {
 
@@ -74,7 +79,7 @@
 
 			}
 
-		}).blur(function(){
+		})/*.blur(function(){
 
 			destroySearch();
 		})

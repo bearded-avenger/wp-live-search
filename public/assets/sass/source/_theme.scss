@@ -3,9 +3,19 @@
 
 }
 
+// Results wrap
+.wp-search--results-wrap {
+	opacity:0;
+}
+
 // Results text
 #wp-search--results {
 
+}
+
+// Input Wrap
+#wp-search--input-wrap {
+	position:relative;
 }
 
 // List of posts
