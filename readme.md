@@ -9,6 +9,6 @@ WordPress search plugin that uses the REST API. This doesn't require pressing en
 WP REST API Plugin
 
 ## Roadmap
-- styles 
-- options 
+- featured image 
+- content text 
 - template function 
