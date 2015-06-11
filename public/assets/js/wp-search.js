@@ -7,7 +7,7 @@
 		,	posts            = new wp.api.collections.Posts()
 		,	postList		 = '#wp-search--post-list'
 		,	results          = '#wp-search--results'
-		,	loader           = '#wp-search--loader'
+		,	loader           = '#wp-search--loading'
 		,	input  			 = '#wp-search--input'
 		,	api              = WP_API_Settings.root
 		,	timer
@@ -27,8 +27,8 @@
 				// if we have more than 3 characters and if value is teh same
 				if ( val.length >= 3 && val == $(that).val() ) {
 
-					// append loading indicator
-					//postList.prepend( loader );
+					// show loader
+					$(loader).css('opacity',1);
 
 					// make the search request
 					$.getJSON( url, function( response ) {
@@ -38,6 +38,9 @@
 
 						// show results
 						$(results).parent().css('opacity',1)
+
+						// hide loader
+						$(loader).css('opacity',0);
 
 						// count results and show
 						if ( response.length == 0 ) {
