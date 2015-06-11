@@ -16,15 +16,6 @@ module.exports = function(grunt) {
                 files: ['public/assets/**/*', '**/*.html', '**/*.php', 'public/assets/img/**/*.{png,jpg,jpeg,gif,webp,svg}']
             }
         },
-   		concat: {
-            dist: {
-                src: [
-                    'public/assets/js/source/util--wp-api.js',
-                    'public/assets/js/source/wp-search.js'
-               	],
-                dest: 'public/assets/js/wp-search.js'
-            }
-        },
         compass: {
      		dist: {
                 options: {

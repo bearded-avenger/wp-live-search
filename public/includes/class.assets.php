@@ -19,11 +19,11 @@ class wpSearchAssets{
 		wp_localize_script( 'wp-api-js', 'WP_API_Settings', $settings );
 
 		// wp search script
-		wp_enqueue_script('wp-search', WP_SEARCH_URL.'/public/assets/js/wp-search.js', array('jquery'), WP_SEARCH_VERSION, true);
-		wp_localize_script('wp-search','wp_search_vars', array('helperText' => __('one more character','wp-search')));
+		wp_enqueue_script('wpls-script', WP_SEARCH_URL.'/public/assets/js/wp-live-search.js', array('jquery'), WP_SEARCH_VERSION, true);
+		wp_localize_script('wpls-script','wp_search_vars', array('helperText' => __('one more character','wp-live-search')));
 
 		// wp seatch style
-		wp_enqueue_style('wp-search-style', WP_SEARCH_URL.'/public/assets/css/style.css', WP_SEARCH_VERSION );
+		wp_enqueue_style('wpls-style', WP_SEARCH_URL.'/public/assets/css/style.css', WP_SEARCH_VERSION );
 	}
 
 }

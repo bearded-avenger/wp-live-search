@@ -1,7 +1,7 @@
 === WP Live Search ===
 Contributors: nphaskins
 Author URI: http://nickhaskins.com
-Plugin URI: http://nickhaskins.com/wp-search
+Plugin URI: http://nickhaskins.com/wpls
 Tags: search, live search
 Requires at least: 3.5.1
 Tested up to: 4.2.1

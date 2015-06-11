@@ -1,7 +1,7 @@
 <?php
 /**
  *
- * @package   WP_Search
+ * @package   WP_Live_Search
  * @author    Nick Haskins <email@nickhaskins.com>
  * @license   GPL-2.0+
  * @link      http://example.com
@@ -24,9 +24,9 @@ define('WP_SEARCH_VERSION', '0.2');
 define('WP_SEARCH_DIR', plugin_dir_path( __FILE__ ));
 define('WP_SEARCH_URL', plugins_url( '', __FILE__ ));
 
-require_once( plugin_dir_path( __FILE__ ) . 'public/class-wp-search.php' );
+require_once( plugin_dir_path( __FILE__ ) . 'public/class-wp-live-search.php' );
 
-register_activation_hook( __FILE__, array( 'WP_Search', 'activate' ) );
-register_deactivation_hook( __FILE__, array( 'WP_Search', 'deactivate' ) );
+register_activation_hook( __FILE__, array( 'WP_Live_Search', 'activate' ) );
+register_deactivation_hook( __FILE__, array( 'WP_Live_Search', 'deactivate' ) );
 
-add_action( 'plugins_loaded', array( 'WP_Search', 'get_instance' ) );
+add_action( 'plugins_loaded', array( 'WP_Live_Search', 'get_instance' ) );

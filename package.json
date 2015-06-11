@@ -1,5 +1,5 @@
 {
-  "name": "wp-search",
+  "name": "wpls",
   "version": "0.0.1",
   "dependencies": {
     "load-grunt-tasks": "~0.2.1"

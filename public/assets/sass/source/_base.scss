@@ -1,20 +1,20 @@
 // Results wrap
-.wp-search--results-wrap {
+.wpls--results-wrap {
 	opacity:0;
 }
 
 // Input Wrap
-#wp-search--input-wrap {
+#wpls--input-wrap {
 	position:relative;
 }
 
 // The Input
-#wp-search--input {
+#wpls--input {
 	height:$input--height;
 }
 
 // List of posts
-#wp-search--post-list {
+#wpls--post-list {
 	list-style:none;
 	margin:0;
 	padding:0;
@@ -33,13 +33,13 @@
 		padding:$spacing--sm;
 	}
 
-	.wp-search--item-title {
+	.wpls--item-title {
 		margin:5px auto;
 	}
 }
 
 // Item Link
-.wp-search--link {
+.wpls--link {
 	@include clearfix();
 
 	&:hover {
@@ -48,21 +48,21 @@
 }
 
 // Item image
-.wp-search--item-image {
+.wpls--item-image {
 	float:left;
 	max-width:$spacing--lg;
 	margin-right:$spacing--sm;
 }
 
 // Item title
-.wp-search--item-title {
+.wpls--item-title {
 	display:inline-block;
 	overflow:hidden;
 	width:auto;
 }
 
 // Character helper
-#wp-search--helper {
+#wpls--helper {
 	position:absolute;
 	right:7px;
 	top:7px;

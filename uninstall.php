@@ -2,7 +2,7 @@
 /**
  * Fired when the plugin is uninstalled.
  *
- * @package   WP_Search
+ * @package   WP_Live_Search
  * @author    Nick Haskins <email@nickhaskins.com>
  * @license   GPL-2.0+
  * @link      http://example.com

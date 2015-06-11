@@ -2,16 +2,16 @@
 
 	jQuery('document').ready( function( $ ){
 
-		var backboneTemplate = $('#wp-search--tmpl')
+		var backboneTemplate = $('#wpls--tmpl')
 		,	itemTemplate     = _.template( backboneTemplate.html() )
 		,	posts            = new wp.api.collections.Posts()
-		,	postList		 = '#wp-search--post-list'
-		,	results          = '#wp-search--results'
-		,	loader           = '#wp-search--loading'
-		,	input  			 = '#wp-search--input'
-		,	helper          = '#wp-search--helper'
+		,	postList		 = '#wpls--post-list'
+		,	results          = '#wpls--results'
+		,	loader           = '#wpls--loading'
+		,	input  			 = '#wpls--input'
+		,	helper           = '#wpls--helper'
 		,	helperText       = wp_search_vars.helperText
-		,	helperSpan       = '<span id="wp-search--helper">'+helperText+'</span>'
+		,	helperSpan       = '<span id="wpls--helper">'+helperText+'</span>'
 		,	api              = WP_API_Settings.root
 		,	timer
 

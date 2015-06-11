@@ -2,7 +2,7 @@
 /**
  * WP Search
  *
- * @package   WP_Search
+ * @package   WP_Live_Search
  * @author    Nick Haskins <email@nickhaskins.com>
  * @license   GPL-2.0+
  * @link      http://example.com
@@ -11,33 +11,10 @@
 
 /**
  *
- * @package WP_Search
+ * @package WP_Live_Search
  * @author  Nick Haskins <email@nickhaskins.com>
  */
-class WP_Search {
-
-	/**
-	 * Plugin version, used for cache-busting of style and script file references.
-	 *
-	 * @since   0.0.1
-	 *
-	 * @var     string
-	 */
-	const VERSION = '0.0.1';
-
-	/**
-	 * Unique identifier
-	 *
-	 *
-	 * The variable name is used as the text domain when internationalizing strings
-	 * of text. Its value should match the Text Domain file header in the main
-	 * plugin file.
-	 *
-	 * @since    0.0.1
-	 *
-	 * @var      string
-	 */
-	protected $plugin_slug = 'wp-search';
+class WP_Live_Search {
 
 	/**
 	 * Instance of this class.
@@ -64,16 +41,6 @@ class WP_Search {
 		require WP_SEARCH_DIR.'/public/includes/class.assets.php';
 	}
 
-	/**
-	 * Return the plugin slug.
-	 *
-	 * @since    0.0.1
-	 *
-	 * @return    Plugin slug variable.
-	 */
-	public function get_plugin_slug() {
-		return $this->plugin_slug;
-	}
 
 	/**
 	 * Return an instance of this class.
@@ -228,8 +195,3 @@ class WP_Search {
 	}
 
 }
-
-
-
-
-
