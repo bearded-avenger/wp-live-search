@@ -79,7 +79,7 @@
 
 			}
 
-		})/*.blur(function(){
+		}).blur(function(){
 
 			destroySearch();
 		})

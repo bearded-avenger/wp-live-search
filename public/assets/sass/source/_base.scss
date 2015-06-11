@@ -42,15 +42,15 @@
 	}
 }
 
-// The Item
-.wp-search--item {
+// Item Link
+.wp-search--link {
 	@include clearfix();
 }
 
 // Item image
 .wp-search--item-image {
 	float:left;
-	max-width:50px;
+	max-width:$spacing--lg;
 	margin-right:$spacing--sm;
 }
 

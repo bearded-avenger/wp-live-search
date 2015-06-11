@@ -1,5 +1,11 @@
 <?php
 
+/**
+*	The view for the item search
+*
+*	This function is pluggable
+*	@since 0.1
+*/
 if ( !function_exists( 'wp_search_backbone_templates' ) ):
 
 	add_action('wp_footer', 'wp_search_backbone_templates');
@@ -7,10 +13,10 @@ if ( !function_exists( 'wp_search_backbone_templates' ) ):
 
 		?>
 			<script type="text/html" id="wp-search--tmpl">
-				<li>
-					<a href="<%= post.link %>" class="wp-search--item" data-postid="<%= post.ID %>" >
+				<li id="wp-search--item-<%= post.ID %>" class="wp-search--item">
+					<a href="<%= post.link %>" class="wp-search--link">
 						<% if ( post.featured_image ) { %>
-							<img class="wp-search--item-image" src="<%= post.featured_image.attachment_meta.sizes.thumbnail.url %>">
+							<img class="wp-search--item-image" src="<%= post.featured_image.attachment_meta.sizes.thumbnail.url %>" alt="<% if ( post.featured_image.title ) { %><%=post.featured_image.title%><% } %> ">
 						<% } %>
 						<h4 class="wp-search--item-title"><%= post.title %></h4>
 					</a>
