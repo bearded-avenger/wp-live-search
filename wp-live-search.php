@@ -7,10 +7,10 @@
  * @link      http://example.com
  * @copyright 2015 Your Name or Company Name
  *
- * Plugin Name:       WP Search
+ * Plugin Name:       WP Live Search
  * Plugin URI:        http://nickhaskins.com
- * Description:       Real-time client-side search using WP REST API and Backbone
- * Version:           0.2
+ * Description:       A super light-weight live search plugin that utilizes the WP REST API
+ * Version:           0.3
  * GitHub Plugin URI: https://github.com/bearded-avenger/wp-live-search
  */
 
@@ -20,7 +20,7 @@ if ( ! defined( 'WPINC' ) ) {
 }
 
 // Set some constants
-define('WP_SEARCH_VERSION', '0.2');
+define('WP_SEARCH_VERSION', '0.3');
 define('WP_SEARCH_DIR', plugin_dir_path( __FILE__ ));
 define('WP_SEARCH_URL', plugins_url( '', __FILE__ ));
 
