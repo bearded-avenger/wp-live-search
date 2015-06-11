@@ -9,6 +9,9 @@
 		,	results          = '#wp-search--results'
 		,	loader           = '#wp-search--loading'
 		,	input  			 = '#wp-search--input'
+		,	helper          = '#wp-search--helper'
+		,	helperText       = wp_search_vars.helperText
+		,	helperSpan       = '<span id="wp-search--helper">'+helperText+'</span>'
 		,	api              = WP_API_Settings.root
 		,	timer
 
@@ -19,21 +22,27 @@
 
 			var that        = this
 			,	val 		= $(this).val()
+			,	valEqual    = val == $(that).val()
 			,	url 		= api+'/posts?filter[s]='+val
 
 			// 600ms delay so we dont exectute excessively
 			timer = setTimeout(function() {
 
-				// what if the user only types 1 or two characters?
-				if ( val.length <= 2 ) {
-					console.log('you need more characters')
+				// what if the user only types two characters?
+				if ( val.length == 2 && valEqual && !$(helper).length ) {
+
+					$(input).after( helperSpan )
+
 				}
 
-				// if we have more than 3 characters and if value is teh same
-				if ( val.length >= 3 && val == $(that).val() ) {
+				// if we have more than 3 characters
+				if ( val.length >= 3 && valEqual ) {
 
 					// show loader
 					$(loader).css('opacity',1);
+
+					// remove any helpers
+					$( helper ).fadeOut().remove()
 
 					// make the search request
 					$.getJSON( url, function( response ) {
@@ -92,6 +101,7 @@
 			$( postList ).children().remove();
 			$( input ).val('');
 			$( results ).parent().css('opacity',0);
+			$( helper ).remove()
 		}
 	})
 

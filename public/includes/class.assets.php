@@ -20,6 +20,7 @@ class wpSearchAssets{
 
 		// wp search script
 		wp_enqueue_script('wp-search', WP_SEARCH_URL.'/public/assets/js/wp-search.js', array('jquery'), WP_SEARCH_VERSION, true);
+		wp_localize_script('wp-search','wp_search_vars', array('helperText' => __('one more character','wp-search')));
 
 		// wp seatch style
 		wp_enqueue_style('wp-search-style', WP_SEARCH_URL.'/public/assets/css/style.css', WP_SEARCH_VERSION );
