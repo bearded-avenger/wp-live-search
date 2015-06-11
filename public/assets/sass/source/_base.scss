@@ -35,6 +35,7 @@
 
 	.wpls--item-title {
 		margin:5px auto;
+		width:auto;
 	}
 }
 
@@ -47,6 +48,14 @@
 	}
 }
 
+// Title And image
+.wpls--item-image,
+.wpls--item-title-wrap {
+	overflow:hidden;
+	_overflow:visible;
+	zoom:1;
+}
+
 // Item image
 .wpls--item-image {
 	float:left;
@@ -54,12 +63,6 @@
 	margin-right:$spacing--sm;
 }
 
-// Item title
-.wpls--item-title {
-	display:inline-block;
-	overflow:hidden;
-	width:auto;
-}
 
 // Character helper
 #wpls--helper {

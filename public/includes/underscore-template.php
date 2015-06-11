@@ -23,7 +23,9 @@ if ( !function_exists( 'wpls_backbone_templates' ) ):
 								<img class="wpls--item-image" src="<%= post.featured_image.source %>" alt="<% if ( post.featured_image.title ) { %><%=post.featured_image.title%><% } %> ">
 							<% } %>
 						<% } %>
-						<h4 class="wpls--item-title"><%= post.title %></h4>
+						<div class="wpls--item-title-wrap">
+							<h4 class="wpls--item-title"><%= post.title %></h4>
+						</div>
 					</a>
 				</li>
 			</script>
