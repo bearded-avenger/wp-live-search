@@ -21,22 +21,26 @@
 			clearTimeout(timer)
 
 			var that        = this
-			,	val 		= $(this).val()
+			,	val 		= $.trim( $(this).val() )
 			,	valEqual    = val == $(that).val()
+			,	notEmpty    = '' !== val
 			,	url 		= api+'/posts?filter[s]='+val
 
 			// 600ms delay so we dont exectute excessively
 			timer = setTimeout(function() {
 
+				if ( !valEqual && !notEmpty )
+					return false;
+
 				// what if the user only types two characters?
-				if ( val.length == 2 && valEqual && !$(helper).length ) {
+				if ( val.length == 2 && !$(helper).length ) {
 
 					$(input).after( helperSpan )
 
 				}
 
 				// if we have more than 3 characters
-				if ( val.length >= 3 && valEqual ) {
+				if ( val.length >= 3 ) {
 
 					// show loader
 					$(loader).css('opacity',1);
