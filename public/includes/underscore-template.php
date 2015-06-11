@@ -16,7 +16,11 @@ if ( !function_exists( 'wp_search_backbone_templates' ) ):
 				<li id="wp-search--item-<%= post.ID %>" class="wp-search--item">
 					<a href="<%= post.link %>" class="wp-search--link">
 						<% if ( post.featured_image ) { %>
-							<img class="wp-search--item-image" src="<%= post.featured_image.attachment_meta.sizes.thumbnail.url %>" alt="<% if ( post.featured_image.title ) { %><%=post.featured_image.title%><% } %> ">
+							<% if ( post.featured_image.attachment_meta ) { %>
+								<img class="wp-search--item-image" src="<%= post.featured_image.attachment_meta.sizes.thumbnail.url %>" alt="<% if ( post.featured_image.title ) { %><%=post.featured_image.title%><% } %> ">
+							<% } else { %>
+								<img class="wp-search--item-image" src="<%= post.featured_image.source %>" alt="<% if ( post.featured_image.title ) { %><%=post.featured_image.title%><% } %> ">
+							<% } %>
 						<% } %>
 						<h4 class="wp-search--item-title"><%= post.title %></h4>
 					</a>
