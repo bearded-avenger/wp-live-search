@@ -10,23 +10,30 @@ class wpSearchShortcode{
 	public function shortcode( $atts, $content = null ) {
 
 		$defaults = array(
-			'type' => 'posts'
+			'type'	 	=> 'posts',
+			'results' 	=> __('entries found','wp-search')
 		);
 		$atts = shortcode_atts( $defaults, $atts );
+
+		$results_text = $atts['results'] ? $atts['results'] : false;
 
 		ob_start();
 
 		?>
 		<div id="wp-search" class="wp-search">
+
 			<div class="wp-search--results-wrap">
 				<span id="wp-search--results"></span>
-				<span>entries found</span>
+				<span><?php echo esc_html( $results_text );?></span>
 			</div>
+
 			<div id="wp-search--input-wrap">
 				<input type="text" id="wp-search--input" placeholder="Search...">
 				<div id="wp-search--loading" class="wp-search--loading"><div class="wp-search--loader"></div></div>
 			</div>
+
 			<ul id="wp-search--post-list"></ul>
+
 		</div>
 
 		<?php
