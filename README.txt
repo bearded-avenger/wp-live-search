@@ -5,7 +5,7 @@ Plugin URI: http://nickhaskins.com/wpls
 Tags: search, live search
 Requires at least: 3.5.1
 Tested up to: 4.2.1
-Stable tag: 0.3
+Stable tag: 0.4
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -52,6 +52,15 @@ It's a shortcode. Add [wp_search] to a page. Working on template functions for t
 
 
 == Changelog ==
+
+= 0.4 =
+* dont allow empty values and spaces for search
+* allow enter to search so long as nothing is empty
+* added a template function
+* added searchAction schema
+* misc style improvements
+* added a define to allow CSS file not be loaded
+* returns 20 results for now until we work in pagination/lazy loading
 
 = 0.3 =
 * featured image support
