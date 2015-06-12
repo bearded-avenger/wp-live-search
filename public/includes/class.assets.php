@@ -4,10 +4,16 @@ class wpSearchAssets{
 
 	public function __construct(){
 
-		add_action('wp_enqueue_scripts', array($this,'scripts'));
+		add_action('wp_enqueue_scripts', 	array($this,'scripts'));
+		add_action('wp_enqueue_scripts',	array($this,'styles'), 99);
 
 	}
 
+	/**
+	*	Enqueue scripts
+	*
+	*	@since 0.1
+	*/
 	public function scripts(){
 
 		// url for json api
@@ -21,6 +27,14 @@ class wpSearchAssets{
 		// wp search script
 		wp_enqueue_script('wpls-script', WP_LIVE_SEARCH_URL.'/public/assets/js/wp-live-search.js', array('jquery'), WP_LIVE_SEARCH_VERSION, true);
 		wp_localize_script('wpls-script','wp_search_vars', array('helperText' => __('one more character','wp-live-search')));
+	}
+
+	/**
+	*	Enqueue the style sheet with a later priority to avoid theme conflicts with basic layout styles
+	*
+	*	@since 0.2
+	*/
+	public function styles() {
 
 		if ( !defined( 'WPLS_DISABLE_STYLE' ) ) {
 
@@ -29,7 +43,6 @@ class wpSearchAssets{
 
 		}
 	}
-
 }
 
 new wpSearchAssets();

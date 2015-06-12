@@ -1,18 +1,39 @@
 // Structure
 $spacing:    			20px;
 $spacing--sm:    		$spacing / 2;
+$spacing--tiny:         $spacing / 2.5;
 $spacing--lg:     		$spacing * 2;
 
 // Colors
 $color--main:   		#EAEAEA;
 $color--dark:        	darken($color--main,7);
 $color--accent:   		#5bc0de;
-$color--item-hover:  	lighten($color--main,4);
+$color--item-hover:  	$color--accent;
 $color--loader:      	$color--dark;
+$color--font:           #444;
+
+// Fonts
+$font--family:          Arial, sans-serif;
+$font--size:            16px;
+$font--color:           $color--font;
+$font--weight:          200;
+$font--size__sm:        $font--size - 2;
+$font--size__lg:        $font--size + 2;
 
 // Input
+$input--bg:             #F8F8F8;
 $input--height:        	$spacing--lg;
+$input--radius:         3px;
+$input--padding:        $spacing--sm;
+$input--color:          $color--font;
+$input--border:         $color--dark;
+
+// Thumbnail
+$thumb--width:          $spacing * 1.5;
 
 // Helper
 $helper--size:         	13px;
 $helper--bg:            $color--accent;
+
+// Misc
+$transition--time:      0.2s;

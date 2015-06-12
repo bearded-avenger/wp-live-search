@@ -26,7 +26,7 @@
 			,	valEqual    = val == $(that).val()
 			,	notEmpty    = '' !== val
 			,	type        = $(this).data('object-type')
-			,	url 		= api+'/'+type+'?filter[s]='+val
+			,	url 		= api+'/'+type+'?filter[s]='+val+'&filter[posts_per_page]=20'
 
 			// 600ms delay so we dont exectute excessively
 			timer = setTimeout(function() {
