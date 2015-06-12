@@ -36,10 +36,10 @@ class WP_Live_Search {
 		// Activate plugin when new blog is added
 		add_action( 'wpmu_new_blog', array( $this, 'activate_new_site' ) );
 
-		require WP_SEARCH_DIR.'/public/includes/underscore-template.php';
-		require WP_SEARCH_DIR.'/public/includes/class.shortcode.php';
-		require WP_SEARCH_DIR.'/public/includes/template-function.php';
-		require WP_SEARCH_DIR.'/public/includes/class.assets.php';
+		require WP_LIVE_SEARCH_DIR.'/public/includes/underscore-template.php';
+		require WP_LIVE_SEARCH_DIR.'/public/includes/class.shortcode.php';
+		require WP_LIVE_SEARCH_DIR.'/public/includes/template-function.php';
+		require WP_LIVE_SEARCH_DIR.'/public/includes/class.assets.php';
 	}
 
 

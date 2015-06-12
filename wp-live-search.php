@@ -20,9 +20,9 @@ if ( ! defined( 'WPINC' ) ) {
 }
 
 // Set some constants
-define('WP_SEARCH_VERSION', '0.3');
-define('WP_SEARCH_DIR', plugin_dir_path( __FILE__ ));
-define('WP_SEARCH_URL', plugins_url( '', __FILE__ ));
+define('WP_LIVE_SEARCH_VERSION', '0.3');
+define('WP_LIVE_SEARCH_DIR', plugin_dir_path( __FILE__ ));
+define('WP_LIVE_SEARCH_URL', plugins_url( '', __FILE__ ));
 
 require_once( plugin_dir_path( __FILE__ ) . 'public/class-wp-live-search.php' );
 
