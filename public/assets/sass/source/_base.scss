@@ -65,10 +65,6 @@
 
 	&:hover {
 		background:$color--item-hover;
-
-		.wpls--item-title {
-			color:$input--bg;
-		}
 	}
 
 	&:hover::last-child {
