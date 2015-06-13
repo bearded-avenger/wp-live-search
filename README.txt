@@ -5,7 +5,7 @@ Plugin URI: http://nickhaskins.com/wpls
 Tags: search, live search
 Requires at least: 3.5.1
 Tested up to: 4.2.1
-Stable tag: 0.4
+Stable tag: 0.4.1
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -52,6 +52,10 @@ It's a shortcode. Add [wp_search] to a page. Working on template functions for t
 
 
 == Changelog ==
+
+= 0.4.1 =
+* removed the search being closed when you click out
+* added an icon that will clear the search
 
 = 0.4 =
 * dont allow empty values and spaces for search
