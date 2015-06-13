@@ -37,21 +37,25 @@ This is very much a working prototype, so please log any issues you find on the 
 == Frequently Asked Questions ==
 
 = What is required for this to work? =
-The WP REST API plugin (the official one) from the WordPress REST API Team.
+The WP REST API (V1) plugin (the official one) from the WordPress REST API Team.
 
 = Does it support featured images? =
-In progress.
+Yes
 
 = Does it support showing content? =
 In progress.
 
 = How do I work it? =
-It's a shortcode. Add [wp_search] to a page. Working on template functions for themers.
+It's a shortcode. Add [wp_live_search] to a page.
 
 == Screenshots ==
 
 
 == Changelog ==
+
+= 0.5 =
+* added an option to specify a target div for the search results to be sent to
+* replaced all inline js styles with CSS classes
 
 = 0.4.1 =
 * removed the search being closed when you click out
