@@ -6,6 +6,7 @@
 		,	itemTemplate     = _.template( backboneTemplate.html() )
 		,	posts            = new wp.api.collections.Posts()
 		,	postList		 = '#wpls--post-list'
+		,	postList         = $( postList ).data('target') ? $( postList ).data('target') : postList
 		,	results          = '#wpls--results'
 		,	loader           = '#wpls--loading'
 		,	input  			 = '#wpls--input'
@@ -18,6 +19,7 @@
 		,	showClass        = 'wpls--show'
 		,	api              = WP_API_Settings.root
 		,	timer
+
 
 		$( input ).on('keyup keypress', function ( e ) {
 

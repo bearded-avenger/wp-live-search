@@ -12,11 +12,13 @@ class wpSearchShortcode{
 		$defaults = array(
 			'type'	 		=> 'posts', // 'posts', 'pages'
 			'placeholder'	=> __('Search...','wp-live-search'),
-			'results' 		=> __('entries found','wp-live-search')
+			'results' 		=> __('entries found','wp-live-search'),
+			'target'		=> ''
 		);
 		$atts = shortcode_atts( $defaults, $atts );
 
 		$results_text = $atts['results'] ? $atts['results'] : false;
+		$target       = $atts['target'] ? sprintf( 'data-target=%s', trim( $atts['target'] ) ) : false;
 
 		ob_start();
 
@@ -33,7 +35,7 @@ class wpSearchShortcode{
 				<div id="wpls--loading" class="wpls--loading"><div class="wpls--loader"></div></div>
 			</div>
 
-			<ul itemprop="target" id="wpls--post-list"></ul>
+			<ul itemprop="target" id="wpls--post-list" <?php echo esc_attr( $target );?>></ul>
 
 		</div>
 
