@@ -13,11 +13,26 @@ A super light-weight live search plugin that utilizes the WP REST API.
 
 == Description ==
 
-WP Live Search is a search plugin for WordPress that returns results as the user types for what they are looking. It currently supports posts with plans to expand to post types.
+WP Live Search is a search plugin for WordPress that returns results as the user types for what they are looking. It currently supports posts and pages with future plans to expand to custom post types.  
 
-This is very much a working prototype, so please log any issues you find on the Github repo below.
+This is very much a working prototype, so please log any issues you find on the Github repo below.  
 
-[https://github.com/bearded-avenger/wp-live-search](https://github.com/bearded-avenger/wp-live-search)
+[https://github.com/bearded-avenger/wp-live-search](https://github.com/bearded-avenger/wp-live-search)  
+
+Add the shortcode `[wp_live_search]` to a page or something. There's a few shortcode attributes that you can use, and are as follows:  
+
+`type`  
+Your choices are `posts` or `pages`. Defaults to `posts`.
+
+`placeholder`  
+The text displayed in the input. Defaults to `Search...`.
+
+`results`  
+The text displayed for the results. Defaults to `entries found`.
+
+`target`  
+An optional target UL parent to send the search results to. Example `target="#someotherdiv"`.
+
 
 == Installation ==
 
@@ -36,6 +51,9 @@ This is very much a working prototype, so please log any issues you find on the 
 
 == Frequently Asked Questions ==
 
+= How do I work it? =
+It's a shortcode. Add [wp_live_search] to a page. See above for some options.
+
 = What is required for this to work? =
 The WP REST API (V1) plugin (the official one) from the WordPress REST API Team.
 
@@ -43,10 +61,16 @@ The WP REST API (V1) plugin (the official one) from the WordPress REST API Team.
 Yes
 
 = Does it support showing content? =
-In progress.
+Not yet
 
-= How do I work it? =
-It's a shortcode. Add [wp_live_search] to a page.
+= Does it support custom post types? =
+Not yet
+
+= Can I use multiple on one page? =
+No.
+
+= Can I disable the style sheet from loading? =
+Yes just use `define('WPLS_DISABLE_STYLE', true)` and the CSS file will not load.
 
 == Screenshots ==
 
