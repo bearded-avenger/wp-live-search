@@ -31,6 +31,7 @@
 		box-shadow:none;
 		border:1px solid transparentize($color--accent,0.6);
 	}
+
 }
 
 // List of posts
@@ -110,4 +111,18 @@
 	color:white;
 	border-radius:2px;
 	font-family:Arial;
+}
+
+// Clear Search Icon
+#wpls--clear-search {
+	position:absolute;
+	right:10px;
+	top:10px;
+	color:$color--dark;
+	z-index:1;
+
+	&:hover {
+		color:darken($color--dark,5);
+		cursor:pointer;
+	}
 }

@@ -12,6 +12,8 @@
 		,	helper           = '#wpls--helper'
 		,	helperText       = wp_search_vars.helperText
 		,	helperSpan       = '<span id="wpls--helper">'+helperText+'</span>'
+		,	clear     		 = '<i id="wpls--clear-search" class="dashicons dashicons-dismiss"></i>'
+		,	clearItem        = '#wpls--clear-search'
 		,	api              = WP_API_Settings.root
 		,	timer
 
@@ -49,7 +51,10 @@
 					$(loader).css('opacity',1);
 
 					// remove any helpers
-					$( helper ).fadeOut().remove()
+					$( helper ).fadeOut().remove();
+
+					// remove the cose
+					destroyClose();
 
 					// make the search request
 					$.getJSON( url, function( response ) {
@@ -69,7 +74,16 @@
 							// results are empty int
 							$(results).text('0')
 
+							// clear any close buttons
+							destroyClose();
+
 						} else {
+
+							// append close button
+							if ( !$( clearItem ).length ) {
+
+								$(input).after( clear )
+							}
 
 							// show how many results we have
 							$(results).text( response.length )
@@ -91,14 +105,29 @@
 			// if there's no value then destroy the search
 			if ( val == '' ) {
 
-				destroySearch()
+				destroySearch();
 
 			}
 
-		}).blur(function(){
+		});
 
+		/**
+		*	Clear search
+		*/
+		$('#wpls').on('click', clearItem, function(e){
+
+			e.preventDefault();
 			destroySearch();
-		})
+		});
+
+		/**
+		* 	Utility function destroy search close
+		*/
+		function destroyClose(){
+
+			$( clearItem ).remove();
+
+		}
 
 		/**
 		*	Utility function to destroy the search
@@ -108,8 +137,9 @@
 			$( postList ).children().remove();
 			$( input ).val('');
 			$( results ).parent().css('opacity',0);
-			$( helper ).remove()
+			$( helper ).remove();
+			destroyClose()
 		}
-	})
+	});
 
 })( jQuery, Backbone, _, WP_API_Settings );
