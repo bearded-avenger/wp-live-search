@@ -14,6 +14,8 @@
 		,	helperSpan       = '<span id="wpls--helper">'+helperText+'</span>'
 		,	clear     		 = '<i id="wpls--clear-search" class="dashicons dashicons-dismiss"></i>'
 		,	clearItem        = '#wpls--clear-search'
+		,	hideClass        = 'wpls--hide'
+		,	showClass        = 'wpls--show'
 		,	api              = WP_API_Settings.root
 		,	timer
 
@@ -48,7 +50,7 @@
 				if ( val.length >= 3 || val.length >= 3 && 13 == key ) {
 
 					// show loader
-					$(loader).css('opacity',1);
+					$(loader).removeClass('wpls--hide').addClass('wpls--show')
 
 					// remove any helpers
 					$( helper ).fadeOut().remove();
@@ -63,10 +65,10 @@
 						$(postList).children().remove()
 
 						// show results
-						$(results).parent().css('opacity',1)
+						$(results).parent().removeClass('wpls--hide').addClass('wpls--show')
 
 						// hide loader
-						$(loader).css('opacity',0);
+						$(loader).removeClass('wpls--show').addClass('wpls--hide')
 
 						// count results and show
 						if ( response.length == 0 ) {
@@ -136,7 +138,7 @@
 
 			$( postList ).children().remove();
 			$( input ).val('');
-			$( results ).parent().css('opacity',0);
+			$( results ).parent().removeClass('wpls--show').addClass('wpls--hide')
 			$( helper ).remove();
 			destroyClose()
 		}

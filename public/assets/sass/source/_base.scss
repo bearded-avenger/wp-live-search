@@ -9,7 +9,14 @@
 
 // Results wrap
 .wpls--results-wrap {
-	opacity:0;
+	position:absolute;
+	margin-bottom:-30px; // complete arbitrary but allows the transition property a start
+	@include transition( margin-bottom $transition--time ease, opacity $transition--time ease );
+
+	&.wpls--show {
+		position:static;
+		margin-bottom:0;
+	}
 }
 
 // Input Wrap
@@ -125,4 +132,15 @@
 		color:darken($color--dark,5);
 		cursor:pointer;
 	}
+}
+
+
+// Utility Class
+.wpls--hide {
+	height:0;
+	opacity:0;
+}
+.wpls--show {
+	height:auto;
+	opacity:1;
 }
