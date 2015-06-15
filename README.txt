@@ -5,7 +5,7 @@ Plugin URI: http://nickhaskins.com/wpls
 Tags: search, live search
 Requires at least: 3.5.1
 Tested up to: 4.2.1
-Stable tag: 0.4.1
+Stable tag: 0.5
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
