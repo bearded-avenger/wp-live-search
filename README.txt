@@ -5,7 +5,7 @@ Plugin URI: http://nickhaskins.com/wpls
 Tags: search, live search
 Requires at least: 3.5.1
 Tested up to: 4.2.1
-Stable tag: 0.5
+Stable tag: 0.6
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -21,16 +21,16 @@ This is very much a working prototype, so please log any issues you find on the 
 
 Add the shortcode `[wp_live_search]` to a page or something. There's a few shortcode attributes that you can use, and are as follows:  
 
-`type`  
+type=""
 Your choices are `posts` or `pages`. Defaults to `posts`.
 
-`placeholder`  
+placeholder=""
 The text displayed in the input. Defaults to `Search...`.
 
-`results`  
+results=""
 The text displayed for the results. Defaults to `entries found`.
 
-`target`  
+target=""
 An optional target UL parent to send the search results to. Example `target="#someotherdiv"`.
 
 
@@ -74,8 +74,12 @@ Yes just use `define('WPLS_DISABLE_STYLE', true)` and the CSS file will not load
 
 == Screenshots ==
 
+1. 
 
 == Changelog ==
+
+= 0.6 =
+* added support to search custom post types
 
 = 0.5 =
 * added an option to specify a target div for the search results to be sent to
