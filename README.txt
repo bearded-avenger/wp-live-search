@@ -79,7 +79,7 @@ Yes just use `define('WPLS_DISABLE_STYLE', true)` and the CSS file will not load
 == Changelog ==
 
 = 0.6 =
-* added support to search custom post types
+* added custom post type support
 
 = 0.5 =
 * added an option to specify a target div for the search results to be sent to
