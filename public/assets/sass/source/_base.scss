@@ -134,6 +134,41 @@
 	}
 }
 
+// Compact Mode
+#wpls.wpls--style-compact {
+	.wpls--item-title {
+		font-size:$font--size__lg - 4;
+		line-height:$font--size__lg - 2;
+	}
+
+	.wpls--item-image {
+		max-width:25px;
+		margin-right:7px;
+	}
+
+	#wpls--post-list a {
+		padding:2px;
+	}
+
+	#wpls--input {
+		height:30px;
+		padding:4px 7px;
+		font-size:15px;
+		line-height:18px;
+		border-radius:2px;
+	}
+
+	#wpls--clear-search {
+		top:6px;
+		right:6px;
+	}
+
+	.wpls--loading {
+		top: -4px;
+  		right: 6px;
+	}
+}
+
 
 // Utility Class
 .wpls--hide {

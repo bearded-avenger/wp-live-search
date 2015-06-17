@@ -13,6 +13,7 @@ class wpSearchShortcode{
 			'type'	 		=> 'posts', // 'posts', 'pages', 'books'
 			'multi'			=> false,
 			'number'		=> 20,
+			'compact'		=> false, 
 			'placeholder'	=> __('Search...','wp-live-search'),
 			'results' 		=> __('entries found','wp-live-search'),
 			'target'		=> ''
@@ -22,11 +23,15 @@ class wpSearchShortcode{
 		$results_text = $atts['results'] ? $atts['results'] : false;
 		$target       = $atts['target'] ? sprintf( 'data-target=%s', trim( $atts['target'] ) ) : false;
 		$number       = $atts['number'] ? sprintf( 'data-number=%s', trim( absint( $atts['number'] ) ) ) : false;
+		$mode        = true == $atts['compact'] ? 'wpls--style-compact' : false;
 
+		// if multiple post objects being passed
 		if ( true == $atts['multi'] ) {
 
+			// explode into chunks and return a type endponig
 			$chunks = self::return_chunks( $atts['type'] );
 
+			// return the type to search
 			$type = $atts['type'] ? sprintf('posts?%s', $chunks ) : false;
 
 		} else {
@@ -37,7 +42,7 @@ class wpSearchShortcode{
 		ob_start();
 
 		?>
-		<div id="wpls" class="wpls" itemprop="potentialAction" itemscope itemtype="http://schema.org/SearchAction">
+		<div id="wpls" class="wpls <?php echo esc_attr( $mode );?>" itemprop="potentialAction" itemscope itemtype="http://schema.org/SearchAction">
 
 			<div class="wpls--results-wrap">
 				<span id="wpls--results"></span>
