@@ -29,7 +29,7 @@ class wpSearchShortcode{
 
 		} else {
 
-			$type = 'posts' == $atts['type'] || 'pages' == $atts['type'] ? sprintf('%s?', trim( $atts['type'] ) ) : sprintf('posts?type=%s?', trim( $atts['type'] ) );
+			$type = 'posts' == $atts['type'] || 'pages' == $atts['type'] ? sprintf('%s?', trim( $atts['type'] ) ) : sprintf('posts?type=%s&', trim( $atts['type'] ) );
 		}
 
 		ob_start();
