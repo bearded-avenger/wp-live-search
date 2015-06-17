@@ -12,6 +12,7 @@ class wpSearchShortcode{
 		$defaults = array(
 			'type'	 		=> 'posts', // 'posts', 'pages', 'books'
 			'multi'			=> false,
+			'number'		=> 5,
 			'placeholder'	=> __('Search...','wp-live-search'),
 			'results' 		=> __('entries found','wp-live-search'),
 			'target'		=> ''
@@ -20,6 +21,7 @@ class wpSearchShortcode{
 
 		$results_text = $atts['results'] ? $atts['results'] : false;
 		$target       = $atts['target'] ? sprintf( 'data-target=%s', trim( $atts['target'] ) ) : false;
+		$number       = $atts['number'] ? sprintf( 'data-number=%s', trim( absint( $atts['number'] ) ) ) : false;
 
 		if ( true == $atts['multi'] ) {
 
@@ -47,7 +49,7 @@ class wpSearchShortcode{
 				<div id="wpls--loading" class="wpls--loading"><div class="wpls--loader"></div></div>
 			</div>
 
-			<ul itemprop="target" id="wpls--post-list" <?php echo esc_attr( $target );?>></ul>
+			<ul itemprop="target" id="wpls--post-list" <?php echo esc_attr( $number );?> <?php echo esc_attr( $target );?>></ul>
 
 		</div>
 

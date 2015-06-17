@@ -32,7 +32,10 @@
 			,	valEqual    = val == $(that).val()
 			,	notEmpty    = '' !== val
 			,	type        = $(this).data('object-type')
-			,	url 		= api+'/'+type+'filter[s]='+val+'&filter[posts_per_page]=20'
+			,	total       = $(postList).data('number')
+			,	url 		= api+'/'+type+'filter[s]='+val+'&filter[posts_per_page]='+total
+
+			console.log(url)
 
 			// 600ms delay so we dont exectute excessively
 			timer = setTimeout(function() {
@@ -95,7 +98,7 @@
 							// loop through each object
 			                $.each( response, function ( i ) {
 
-			                    $(postList).prepend( itemTemplate( { post: response[i], settings: WP_API_Settings } ) );
+			                    $(postList).append( itemTemplate( { post: response[i], settings: WP_API_Settings } ) );
 
 			                } );
 			            }
