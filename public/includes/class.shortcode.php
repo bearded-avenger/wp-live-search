@@ -12,7 +12,7 @@ class wpSearchShortcode{
 		$defaults = array(
 			'type'	 		=> 'posts', // 'posts', 'pages', 'books'
 			'multi'			=> false,
-			'number'		=> 5,
+			'number'		=> 20,
 			'placeholder'	=> __('Search...','wp-live-search'),
 			'results' 		=> __('entries found','wp-live-search'),
 			'target'		=> ''
