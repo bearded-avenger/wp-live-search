@@ -22,7 +22,10 @@ This is very much a working prototype, so please log any issues you find on the 
 Add the shortcode `[wp_live_search]` to a page or something. There's a few shortcode attributes that you can use, and are as follows:  
 
 type=""
-Your choices are `posts` or `pages`. Defaults to `posts`.
+Your choices are `posts` or `pages`. Defaults to `posts`. You can also pass `type,type` to search multiple post types. For example type="recipes,books"
+
+multi=""
+By default this is turned off. Set this to true only if you're using multiple post types above.
 
 placeholder=""
 The text displayed in the input. Defaults to `Search...`.
@@ -77,6 +80,11 @@ Yes just use `define('WPLS_DISABLE_STYLE', true)` and the CSS file will not load
 1. 
 
 == Changelog ==
+
+= 0.7 =
+* fixed results being returned in reverse order
+* added multiple post type support by using type="typeone,typetwo" multi="true"
+* added an option to set the number of results returned
 
 = 0.6 =
 * added custom post type support
