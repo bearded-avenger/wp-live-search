@@ -33,6 +33,12 @@ The text displayed in the input. Defaults to `Search...`.
 results=""
 The text displayed for the results. Defaults to `entries found`.
 
+number=""
+Total search result to return. Default is 20
+
+compact="true"
+Makes a tiny WP Live Search for use in header widgets and such
+
 target=""
 An optional target UL parent to send the search results to. Example `target="#someotherdiv"`.
 
@@ -85,6 +91,7 @@ Yes just use `define('WPLS_DISABLE_STYLE', true)` and the CSS file will not load
 * fixed results being returned in reverse order
 * added multiple post type support by using type="typeone,typetwo" multi="true"
 * added an option to set the number of results returned
+* added a "compact" mode option to that it can be used in places like a header widget
 
 = 0.6 =
 * added custom post type support

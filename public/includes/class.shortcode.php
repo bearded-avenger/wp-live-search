@@ -13,7 +13,7 @@ class wpSearchShortcode{
 			'type'	 		=> 'posts', // 'posts', 'pages', 'books'
 			'multi'			=> false,
 			'number'		=> 20,
-			'compact'		=> false, 
+			'compact'		=> false,
 			'placeholder'	=> __('Search...','wp-live-search'),
 			'results' 		=> __('entries found','wp-live-search'),
 			'target'		=> ''
