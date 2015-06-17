@@ -35,8 +35,6 @@
 			,	total       = $(postList).data('number')
 			,	url 		= api+'/'+type+'filter[s]='+val+'&filter[posts_per_page]='+total
 
-			console.log(url)
-
 			// 600ms delay so we dont exectute excessively
 			timer = setTimeout(function() {
 
