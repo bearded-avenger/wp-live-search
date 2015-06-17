@@ -11,6 +11,7 @@ class wpSearchShortcode{
 
 		$defaults = array(
 			'type'	 		=> 'posts', // 'posts', 'pages', 'books'
+			'multi'			=> false,
 			'placeholder'	=> __('Search...','wp-live-search'),
 			'results' 		=> __('entries found','wp-live-search'),
 			'target'		=> ''
@@ -20,7 +21,16 @@ class wpSearchShortcode{
 		$results_text = $atts['results'] ? $atts['results'] : false;
 		$target       = $atts['target'] ? sprintf( 'data-target=%s', trim( $atts['target'] ) ) : false;
 
-		$type = 'posts' == $atts['type'] || 'pages' == $atts['type'] ? $atts['type'] : sprintf('posts?type=%s&', trim( $atts['type'] ) );
+		if ( true == $atts['multi'] ) {
+
+			$chunks = self::return_chunks( $atts['type'] );
+
+			$type = $atts['type'] ? sprintf('posts?%s', $chunks ) : false;
+
+		} else {
+
+			$type = 'posts' == $atts['type'] || 'pages' == $atts['type'] ? sprintf('%s?', trim( $atts['type'] ) ) : sprintf('posts?type=%s?', trim( $atts['type'] ) );
+		}
 
 		ob_start();
 
@@ -44,6 +54,34 @@ class wpSearchShortcode{
 		<?php
 
 		return ob_get_clean();
+	}
+
+	/**
+	*	Return a search filter paramater based on the number of types a user passes
+	*
+	*	@since 0.7
+	*	@access private
+	*/
+	private static function return_chunks( $types ){
+
+		if ( empty( $types ) ) {
+			return;
+		}
+
+		$out = '';
+
+		$types = explode(',', $types );
+
+		if ( $types ):
+
+			foreach ( (array) $types as $type ) {
+				$out .= sprintf('type[]=%s&', $type);
+			}
+
+		endif;
+
+		return $out;
+
 	}
 
 }
