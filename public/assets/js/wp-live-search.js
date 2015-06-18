@@ -5,8 +5,9 @@
 		var backboneTemplate = $('#wpls--tmpl')
 		,	itemTemplate     = _.template( backboneTemplate.html() )
 		,	posts            = new wp.api.collections.Posts()
+		,	main             = '#wpls'
 		,	postList		 = '#wpls--post-list'
-		,	postList         = $( postList ).data('target') ? $( postList ).data('target') : postList
+		,	postList         = $( main ).data('target') ? $( main ).data('target') : postList
 		,	results          = '#wpls--results'
 		,	loader           = '#wpls--loading'
 		,	input  			 = '#wpls--input'
@@ -20,7 +21,6 @@
 		,	api              = WP_API_Settings.root
 		,	timer
 
-
 		$( input ).on('keyup keypress', function ( e ) {
 
 			// clear the previous timer
@@ -32,7 +32,7 @@
 			,	valEqual    = val == $(that).val()
 			,	notEmpty    = '' !== val
 			,	type        = $(this).data('object-type')
-			,	total       = $(postList).data('number')
+			,	total       = $( main ).data('number')
 			,	url 		= api+'/'+type+'filter[s]='+val+'&filter[posts_per_page]='+total
 
 			// 600ms delay so we dont exectute excessively
@@ -63,6 +63,8 @@
 
 					// make the search request
 					$.getJSON( url, function( response ) {
+
+						console.log(response)
 
 						// remove current list of posts
 						$(postList).children().remove()

@@ -42,7 +42,7 @@ class wpSearchShortcode{
 		ob_start();
 
 		?>
-		<div id="wpls" class="wpls <?php echo esc_attr( $mode );?>" itemprop="potentialAction" itemscope itemtype="http://schema.org/SearchAction">
+		<div id="wpls" class="wpls <?php echo esc_attr( $mode );?>" itemprop="potentialAction" itemscope itemtype="http://schema.org/SearchAction" <?php echo esc_attr( $number );?> <?php echo esc_attr( $target );?>>
 
 			<div class="wpls--results-wrap">
 				<span id="wpls--results"></span>
@@ -54,7 +54,7 @@ class wpSearchShortcode{
 				<div id="wpls--loading" class="wpls--loading"><div class="wpls--loader"></div></div>
 			</div>
 
-			<ul itemprop="target" id="wpls--post-list" <?php echo esc_attr( $number );?> <?php echo esc_attr( $target );?>></ul>
+			<ul itemprop="target" id="wpls--post-list"></ul>
 
 		</div>
 
