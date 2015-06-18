@@ -5,7 +5,7 @@ Plugin URI: http://nickhaskins.com/wpls
 Tags: search, live search
 Requires at least: 3.5.1
 Tested up to: 4.2.1
-Stable tag: 0.6
+Stable tag: trunk
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -13,7 +13,7 @@ A super light-weight live search plugin that utilizes the WP REST API.
 
 == Description ==
 
-WP Live Search is a search plugin for WordPress that returns results as the user types for what they are looking. It currently supports posts and pages with future plans to expand to custom post types.  
+WP Live Search is a search plugin for WordPress that returns results as the user types for what they are looking. It currently supports posts, pages, post types, including multiple post types.  
 
 This is very much a working prototype, so please log any issues you find on the Github repo below.  
 
@@ -21,25 +21,25 @@ This is very much a working prototype, so please log any issues you find on the 
 
 Add the shortcode `[wp_live_search]` to a page or something. There's a few shortcode attributes that you can use, and are as follows:  
 
-type=""
+type=""  
 Your choices are `posts` or `pages`. Defaults to `posts`. You can also pass `type,type` to search multiple post types. For example type="recipes,books"
 
-multi=""
+multi=""  
 By default this is turned off. Set this to true only if you're using multiple post types above.
 
-placeholder=""
+placeholder=""  
 The text displayed in the input. Defaults to `Search...`.
 
-results=""
+results=""  
 The text displayed for the results. Defaults to `entries found`.
 
-number=""
+number=""  
 Total search result to return. Default is 20
 
-compact="true"
+compact="true"  
 Makes a tiny WP Live Search for use in header widgets and such
 
-target=""
+target=""  
 An optional target UL parent to send the search results to. Example `target="#someotherdiv"`.
 
 
@@ -83,9 +83,13 @@ Yes just use `define('WPLS_DISABLE_STYLE', true)` and the CSS file will not load
 
 == Screenshots ==
 
-1. 
+1. basic design
+2. compact mode
 
 == Changelog ==
+
+= 0.7.1 =
+* fixed target="" feature only receiving one search result
 
 = 0.7 =
 * fixed results being returned in reverse order
