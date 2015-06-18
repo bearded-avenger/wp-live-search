@@ -54,7 +54,9 @@ class wpSearchShortcode{
 				<div id="wpls--loading" class="wpls--loading"><div class="wpls--loader"></div></div>
 			</div>
 
+			<?php if ( !$atts['target'] ) { ?>
 			<ul itemprop="target" id="wpls--post-list"></ul>
+			<?php } ?>
 
 		</div>
 

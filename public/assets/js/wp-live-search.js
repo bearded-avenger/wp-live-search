@@ -64,8 +64,6 @@
 					// make the search request
 					$.getJSON( url, function( response ) {
 
-						console.log(response)
-
 						// remove current list of posts
 						$(postList).children().remove()
 
