@@ -14,42 +14,64 @@
       <h1 class="project-name">WP Live Search</h1>
       <h2 class="project-tagline">A live search plugin for WordPress that utilizes REST API + Backbone + Underscore</h2>
       <a href="https://github.com/bearded-avenger/wp-live-search" class="btn">View on GitHub</a>
+      <a href="https://wordpress.org/plugins/wp-search-live/" class="btn">View on WordPress.org</a>
       <a href="https://github.com/bearded-avenger/wp-live-search/zipball/master" class="btn">Download .zip</a>
-      <a href="https://github.com/bearded-avenger/wp-live-search/tarball/master" class="btn">Download .tar.gz</a>
     </section>
 
     <section class="main-content">
+    	<p>WP Live Search uses the WP REST API endpoint available for search. It will deliver results just as fast as the REST API on YOUR server can send them back. In the end it's important to realize that the REST API is just a wrapper for WP Query, and still uses PHP to process the requests.</p>
+    	<p>However, since we're only fetching JSON results, the search insn't being performed againts admin-ajax.php, so the experience should, in theory, be lightweight and super fast.</p>
       <h3>
-<a id="welcome-to-github-pages" class="anchor" href="#welcome-to-github-pages" aria-hidden="true"><span class="octicon octicon-link"></span></a>Welcome to GitHub Pages.</h3>
+<a id="welcome-to-github-pages" class="anchor" href="#welcome-to-github-pages" aria-hidden="true"><span class="octicon octicon-link"></span></a>Basic Usage</h3>
 
-<p>This automatic page generator is the easiest way to create beautiful pages for all of your projects. Author your page content here using GitHub Flavored Markdown, select a template crafted by a designer, and publish. After your page is generated, you can check out the new branch:</p>
-
-<pre><code>$ cd your_repo_root/repo_name
-$ git fetch origin
-$ git checkout gh-pages
-</code></pre>
-
-<p>If you're using the GitHub for Mac, simply sync your repository and you'll see the new branch.</p>
+<ol>
+	<li>Activate the WP REST API plugin</li>
+	<li>Add the shortcode <code>[wp_live_search]</code> to a page or something</li>
+</ol>
 
 <h3>
-<a id="designer-templates" class="anchor" href="#designer-templates" aria-hidden="true"><span class="octicon octicon-link"></span></a>Designer Templates</h3>
+<a id="options" class="anchor" href="#options" aria-hidden="true"><span class="octicon octicon-link"></span></a>Options</h3>
 
-<p>We've crafted some handsome templates for you to use. Go ahead and continue to layouts to browse through them. You can easily go back to edit your page before publishing. After publishing your page, you can revisit the page generator and switch to another theme. Your Page content will be preserved if it remained markdown format.</p>
+<p>WP Live Search is incredibly extensive and can be used in variety of applications from small to large.</p>
+
+<ul>
+	<li><code>type=""</code> - Your choices are <em>posts</em> or <em>pages</em>. Defaults to <em>posts</em>. You can also pass <em>type,type</em> to search multiple post types. For example <code>type="recipes,books"</code></li>
+	<li><code>multi="true"</code> - Set only if you're using multiple post types above.</li>
+	<li><code>placeholder=""</code> - The text displayed in the input. Defaults to <em>Search...</em>.</li>
+	<li><code>number=""</code> - Total search result to return. Default is 20</li>
+	<li><code>excerpt="true"</code> - Show the excerpt along with the title and featured image (if set)</li>
+	<li><code>compact="true"</code> - Makes a tiny WP Live Search for use in header widgets and such</li>
+	<li><code>dropdown="true"</code> - Display search results as a drop-down instead of pushing down the content around it</li>
+	<li><code>results=""</code> - The text displayed for the results. Defaults to <em>entries found</em>.</li>
+	<li><code>results_style=""</code> - Displays the "entries found" inside of the input area, useful for using in areas like header widgets where space is minimal.</li>
+	<li><code>target=""</code> - An optional target UL parent to send the search results to. Example <code>target="#someotherdiv"</code>.</li>
+</ul>
 
 <h3>
-<a id="rather-drive-stick" class="anchor" href="#rather-drive-stick" aria-hidden="true"><span class="octicon octicon-link"></span></a>Rather Drive Stick?</h3>
+<a id="examples" class="anchor" href="#examples" aria-hidden="true"><span class="octicon octicon-link"></span></a>Examples</h3>
 
-<p>If you prefer to not use the automatic generator, push a branch named <code>gh-pages</code> to your repository to create a page manually. In addition to supporting regular HTML content, GitHub Pages support Jekyll, a simple, blog aware static site generator written by our own Tom Preston-Werner. Jekyll makes it easy to create site-wide headers and footers without having to copy them across every page. It also offers intelligent blog support and other advanced templating features.</p>
+<p>Because there are so many use cases, here are a few examples along with screenshots of how you can use WP Live Search.</p>
+
+<figure>
+<img src="public/assets/img/wpls-tiny.png">
+<figcaption><code>[wp_live_search compact="true" dropdown="true" results_style="inside"]</code></figcaption>
+</figure>
+
+<figure>
+<img src="public/assets/img/wpls-target.png">
+<figcaption><code>[wp_live_search target="#someotherdiv"]</code><p><em>note: in the example above the define is also used <code>define('WPLS_STYLE_DISABLED',true);</code> to eliminate the stylesheet from loading. Secondly, the template override feature is being used (discussed below) to change the appearence of the list item.</em></p></figcaption>
+</figure>
 
 <h3>
-<a id="authors-and-contributors" class="anchor" href="#authors-and-contributors" aria-hidden="true"><span class="octicon octicon-link"></span></a>Authors and Contributors</h3>
+<a id="advanced" class="anchor" href="#advanced" aria-hidden="true"><span class="octicon octicon-link"></span></a>Advanced</h3>
 
-<p>You can <a href="https://github.com/blog/821" class="user-mention">@mention</a> a GitHub username to generate a link to their profile. The resulting <code>&lt;a&gt;</code> element will link to the contributor's GitHub Profile. For example: In 2007, Chris Wanstrath (<a href="https://github.com/defunkt" class="user-mention">@defunkt</a>), PJ Hyett (<a href="https://github.com/pjhyett" class="user-mention">@pjhyett</a>), and Tom Preston-Werner (<a href="https://github.com/mojombo" class="user-mention">@mojombo</a>) founded GitHub.</p>
+<p>Here are a few advanced options that you might find useful in your project.</p>
 
-<h3>
-<a id="support-or-contact" class="anchor" href="#support-or-contact" aria-hidden="true"><span class="octicon octicon-link"></span></a>Support or Contact</h3>
+<h5>Disable Style Loading</h5>
+<p>Use <code>define('WPLS_STYLE_DISABLED',true);</code> to disable the CSS style from loading. Note, you will want to add back in .wpls--show and .wpls--hide, these are responsible for showing and hiding content via JS.</p>
 
-<p>Having trouble with Pages? Check out the documentation at <a href="https://help.github.com/pages">https://help.github.com/pages</a> or contact <a href="mailto:support@github.com">support@github.com</a> and we’ll help you sort it out.</p>
+<h5>Template Item Override</h5>
+<p>You can override the list item by copying the function from template-underscore.php into your own plugin (without the function exists). From here you can modify the markup as you wish, but you might want to keep the same classes so that the basic functionality is retained. It's also important to note that this will not work in a themes functions.php file, pluggable functions from a plugin will only work in another plugin.</p>
 
       <footer class="site-footer">
         <span class="site-footer-owner"><a href="https://github.com/bearded-avenger/wp-live-search">WP Live Search</a> is maintained by <a href="https://github.com/bearded-avenger">bearded-avenger</a>.</span>
