@@ -116,6 +116,7 @@ Yep! Just copy over the function from underscore-template.php (without the funct
 * added "dropdown" option mode for use in small spaces
 * added "results_style" option for use in small spaces
 * added "excerpt" option to show excerpt
+* added five action hooks
 
 = 0.7.1 =
 * fixed target="" feature only receiving one search result
@@ -125,6 +126,7 @@ Yep! Just copy over the function from underscore-template.php (without the funct
 * added multiple post type support by using type="typeone,typetwo" multi="true"
 * added an option to set the number of results returned
 * added a "compact" mode option to that it can be used in places like a header widget
+* improved styling
 
 = 0.6 =
 * added custom post type support
