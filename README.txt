@@ -30,18 +30,36 @@ By default this is turned off. Set this to true only if you're using multiple po
 placeholder=""  
 The text displayed in the input. Defaults to `Search...`.
 
-results=""  
-The text displayed for the results. Defaults to `entries found`.
-
 number=""  
 Total search result to return. Default is 20
 
 compact="true"  
 Makes a tiny WP Live Search for use in header widgets and such
 
+dropdown="true"  
+Display search results as a drop-down instead of pushing down the content around it
+
+results=""  
+The text displayed for the results. Defaults to `entries found`.
+
+results_style="inside"  
+Displays the "entries found" inside of the input area, useful for using in areas like header widgets where space is minimal.
+
 target=""  
 An optional target UL parent to send the search results to. Example `target="#someotherdiv"`.
 
+---
+
+Here are a couple examples:
+
+Default Usage:  
+`[wp_live_search]`
+
+Use in Header Widget:  
+`[wp_live_search compact="true" dropdown="true" results="found" results_style="inside"]`
+
+Search through multiple post types:  
+`[wp_live_search multi="true" type="posts,page"]`
 
 == Installation ==
 
@@ -79,7 +97,10 @@ Not yet
 No.
 
 = Can I disable the style sheet from loading? =
-Yes just use `define('WPLS_DISABLE_STYLE', true)` and the CSS file will not load.
+Yes just use `define('WPLS_DISABLE_STYLE', true)` and the CSS file will not load. However you will want to make sure you at least copy over .wpls--show and .wpls--hide. JS uses these classes for things and the search may not appear correctly without them.
+
+= Can I override the display item? =
+Yep! Just copy over the function from underscore-template.php (without the function exists) and drop it into any plugin. Note, pluggable functions wont run in a theme file, themes run too late, so this needs to be in a plugin file. From here you can modify the temlate as needed.
 
 == Screenshots ==
 
@@ -87,6 +108,10 @@ Yes just use `define('WPLS_DISABLE_STYLE', true)` and the CSS file will not load
 2. compact mode
 
 == Changelog ==
+
+= 0.8 =
+* added a new "dropdown" mode for use in small spaces
+* added a new "results_style" option for use in small spaces
 
 = 0.7.1 =
 * fixed target="" feature only receiving one search result
