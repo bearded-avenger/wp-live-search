@@ -5,6 +5,16 @@
 		-webkit-font-smoothing: antialiased;
         -moz-osx-font-smoothing: grayscale;
 	}
+
+	&.wpls--collapse {
+		position:relative;
+
+		#wpls--post-list {
+			position:absolute;
+			left:0;
+			right:0;
+		}
+	}
 }
 
 // Results wrap

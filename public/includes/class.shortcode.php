@@ -14,6 +14,7 @@ class wpSearchShortcode{
 			'multi'			=> false,
 			'number'		=> 20,
 			'compact'		=> false,
+			'collapse'		=> false,
 			'placeholder'	=> __('Search...','wp-live-search'),
 			'results' 		=> __('entries found','wp-live-search'),
 			'target'		=> ''
@@ -24,6 +25,8 @@ class wpSearchShortcode{
 		$target       = $atts['target'] ? sprintf( 'data-target=%s', trim( $atts['target'] ) ) : false;
 		$number       = $atts['number'] ? sprintf( 'data-number=%s', trim( absint( $atts['number'] ) ) ) : false;
 		$mode        = true == $atts['compact'] ? 'wpls--style-compact' : false;
+		$collapse     = true == $atts['collapse'] ? 'wpls--collapse' : false;
+
 
 		// if multiple post objects being passed
 		if ( true == $atts['multi'] ) {
@@ -42,7 +45,7 @@ class wpSearchShortcode{
 		ob_start();
 
 		?>
-		<div id="wpls" class="wpls <?php echo esc_attr( $mode );?>" itemprop="potentialAction" itemscope itemtype="http://schema.org/SearchAction" <?php echo esc_attr( $number );?> <?php echo esc_attr( $target );?>>
+		<div id="wpls" class="wpls <?php echo esc_attr( $mode );?> <?php echo esc_attr( $collapse );?> " itemprop="potentialAction" itemscope itemtype="http://schema.org/SearchAction" <?php echo esc_attr( $number );?> <?php echo esc_attr( $target );?>>
 
 			<div class="wpls--results-wrap">
 				<span id="wpls--results"></span>
