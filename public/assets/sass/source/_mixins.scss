@@ -8,3 +8,12 @@
        -o-transition: $transition;
           transition: $transition;
 }
+
+@mixin wpls-badge($color){
+	font-size:$helper--size;
+	padding:3px 8px;
+	background:$color;
+	color:white;
+	border-radius:2px;
+	font-family:Arial;
+}

@@ -45,7 +45,7 @@
 				// what if the user only types two characters?
 				if ( val.length == 2 && !$(helper).length ) {
 
-					$(input).after( helperSpan )
+					$(input).after( helperSpan );
 
 				}
 
@@ -53,7 +53,7 @@
 				if ( val.length >= 3 || val.length >= 3 && 13 == key ) {
 
 					// show loader
-					$(loader).removeClass('wpls--hide').addClass('wpls--show')
+					$(loader).removeClass('wpls--hide').addClass('wpls--show');
 
 					// remove any helpers
 					$( helper ).fadeOut().remove();
@@ -65,19 +65,19 @@
 					$.getJSON( url, function( response ) {
 
 						// remove current list of posts
-						$(postList).children().remove()
+						$(postList).children().remove();
 
 						// show results
-						$(results).parent().removeClass('wpls--hide').addClass('wpls--show')
+						$(results).parent().removeClass('wpls--hide').addClass('wpls--show');
 
 						// hide loader
-						$(loader).removeClass('wpls--show').addClass('wpls--hide')
+						$(loader).removeClass('wpls--show').addClass('wpls--hide');
 
 						// count results and show
 						if ( response.length == 0 ) {
 
 							// results are empty int
-							$(results).text('0')
+							$(results).text('0').closest( main ).addClass('wpls--no-results');
 
 							// clear any close buttons
 							destroyClose();
@@ -87,11 +87,11 @@
 							// append close button
 							if ( !$( clearItem ).length ) {
 
-								$(input).after( clear )
+								$(input).after( clear );
 							}
 
 							// show how many results we have
-							$(results).text( response.length )
+							$(results).text( response.length ).closest( main ).removeClass('wpls--no-results');
 
 							// loop through each object
 			                $.each( response, function ( i ) {
@@ -119,7 +119,7 @@
 		/**
 		*	Clear search
 		*/
-		$('#wpls').on('click', clearItem, function(e){
+		$( main ).on('click', clearItem, function(e){
 
 			e.preventDefault();
 			destroySearch();
@@ -141,7 +141,7 @@
 
 			$( postList ).children().remove();
 			$( input ).val('');
-			$( results ).parent().removeClass('wpls--show').addClass('wpls--hide')
+			$( results ).parent().removeClass('wpls--show').addClass('wpls--hide');
 			$( helper ).remove();
 			destroyClose()
 		}
