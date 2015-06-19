@@ -16,8 +16,10 @@ A super light-weight live search plugin that utilizes the WP REST API.
 WP Live Search (beta) is a search plugin for WordPress that returns results as the user types for what they are looking. It currently supports posts, pages, post types, including multiple post types, and design modes.  
 
 This is very much a working prototype, so please log any issues you find on the Github repo below.  
-
 [https://github.com/bearded-avenger/wp-live-search](https://github.com/bearded-avenger/wp-live-search)  
+
+Here's some documentation.  
+[http://bearded-avenger.github.io/wp-live-search/](http://bearded-avenger.github.io/wp-live-search/)  
 
 Add the shortcode `[wp_live_search]` to a page or something. There's a few shortcode attributes that you can use, and are as follows:  
 
