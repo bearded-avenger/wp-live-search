@@ -8,6 +8,7 @@
 		,	main             = '#wpls'
 		,	postList		 = '#wpls--post-list'
 		,	postList         = $( main ).data('target') ? $( main ).data('target') : postList
+		,	showExcerpt      = $( main ).data('excerpt') ? 'enabled' : 'disabled'
 		,	results          = '#wpls--results'
 		,	loader           = '#wpls--loading'
 		,	input  			 = '#wpls--input'
@@ -96,7 +97,7 @@
 							// loop through each object
 			                $.each( response, function ( i ) {
 
-			                    $(postList).append( itemTemplate( { post: response[i], settings: WP_API_Settings } ) );
+			                    $(postList).append( itemTemplate( { post: response[i], settings: WP_API_Settings, excerpt: showExcerpt } ) );
 
 			                } );
 			            }

@@ -33,6 +33,9 @@ The text displayed in the input. Defaults to `Search...`.
 number=""  
 Total search result to return. Default is 20
 
+excerpt="true"  
+Show the excerpt along with the title and featured image (if set)
+
 compact="true"  
 Makes a tiny WP Live Search for use in header widgets and such
 
@@ -88,13 +91,13 @@ The WP REST API (V1) plugin (the official one) from the WordPress REST API Team.
 Yes
 
 = Does it support showing content? =
-Not yet
+Yes
 
 = Does it support custom post types? =
 Yes
 
 = Can I use multiple on one page? =
-No.
+No
 
 = Can I disable the style sheet from loading? =
 Yes just use `define('WPLS_DISABLE_STYLE', true)` and the CSS file will not load. However you will want to make sure you at least copy over .wpls--show and .wpls--hide. JS uses these classes for things and the search may not appear correctly without them.
@@ -110,8 +113,9 @@ Yep! Just copy over the function from underscore-template.php (without the funct
 == Changelog ==
 
 = 0.8 =
-* added a new "dropdown" mode for use in small spaces
-* added a new "results_style" option for use in small spaces
+* added "dropdown" option mode for use in small spaces
+* added "results_style" option for use in small spaces
+* added "excerpt" option to show excerpt
 
 = 0.7.1 =
 * fixed target="" feature only receiving one search result

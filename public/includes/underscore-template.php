@@ -26,6 +26,9 @@ if ( !function_exists( 'wpls_backbone_templates' ) ):
 						<div class="wpls--item-title-wrap">
 							<h4 class="wpls--item-title"><%= post.title %></h4>
 						</div>
+						<% if ( 'enabled' == excerpt ) { %>
+							<div class="wpls--item-excerpt"><%= post.excerpt %></div>
+						<% } %>
 					</a>
 				</li>
 			</script>

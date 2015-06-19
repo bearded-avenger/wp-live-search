@@ -15,6 +15,7 @@ class wpSearchShortcode{
 			'number'		=> 20, // return a certain number of search results
 			'compact'		=> false, // display search in a scaled down version with less padding and smaller fonts
 			'dropdown'		=> false, // display results as a drop down instead of pushing down content around the search
+			'excerpt'		=> false, // optionally display the excerpt along with the title and featured image
 			'placeholder'	=> __('Search...','wp-live-search'),
 			'results' 		=> __('entries found','wp-live-search'),
 			'results_style' => 'default', // 'default', 'inside' : repositions the search label
@@ -22,11 +23,9 @@ class wpSearchShortcode{
 		);
 		$atts = shortcode_atts( $defaults, $atts );
 
-		$results_text 	= $atts['results'] ? $atts['results'] : false;
-		$target       	= $atts['target'] ? sprintf( 'data-target=%s', trim( $atts['target'] ) ) : false;
-		$number       	= $atts['number'] ? sprintf( 'data-number=%s', trim( absint( $atts['number'] ) ) ) : false;
 		$mode        	= true == $atts['compact'] ? 'wpls--style-compact' : false;
 		$collapse     	= true == $atts['dropdown'] ? 'wpls--collapse' : false;
+		$results_text 	= $atts['results'] ? $atts['results'] : false;
 		$results_style  = sprintf('wpls--results-style-%s', trim( $atts['results_style'] ) );
 
 		// if multiple post objects being passed
@@ -47,7 +46,7 @@ class wpSearchShortcode{
 
 		do_action('wpls_before'); // action ?>
 
-		<div id="wpls" class="wpls <?php echo esc_attr( $mode );?> <?php echo esc_attr( $collapse );?> <?php echo esc_attr( $results_style );?> " itemprop="potentialAction" itemscope itemtype="http://schema.org/SearchAction" <?php echo esc_attr( $number );?> <?php echo esc_attr( $target );?>>
+		<div id="wpls" class="wpls <?php echo esc_attr( $mode );?> <?php echo esc_attr( $collapse );?> <?php echo esc_attr( $results_style );?> " itemprop="potentialAction" itemscope itemtype="http://schema.org/SearchAction" <?php echo self::build_local_atts( $atts );?> >
 
 			<?php do_action('wpls_inside_top'); // action ?>
 
@@ -82,6 +81,23 @@ class wpSearchShortcode{
 		<?php do_action('wpls_after'); // action
 
 		return ob_get_clean();
+	}
+
+	/**
+	*	Return data atts according to option
+	*
+	*	@since 0.8
+	*	@access private
+	*/
+	private static function build_local_atts( $atts ) {
+
+		$out = '';
+
+		if ( $atts['number'] ) { $out .= sprintf(' data-number=%s ', $atts['number'] ); }
+		if ( $atts['target'] ) { $out .= sprintf(' data-target=%s ', $atts['target'] ); }
+		if ( true == $atts['excerpt'] ) { $out .= ' data-excerpt=enabled '; }
+
+		return $out;
 	}
 
 	/**
