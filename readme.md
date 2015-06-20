@@ -7,7 +7,3 @@ WordPress search plugin that uses the REST API, Backbone, and Underscore. This d
 ## Requirements
 
 WP REST API Plugin
-
-## Roadmap
-- content text 
-- template function 
