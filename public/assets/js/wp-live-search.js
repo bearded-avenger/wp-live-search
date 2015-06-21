@@ -60,7 +60,7 @@
 					$( helper ).fadeOut().remove();
 
 					// remove the cose
-					destroyClose();
+					destroyClose()
 
 					// make the search request
 					$.getJSON( url, function( response ) {
@@ -84,6 +84,10 @@
 							destroyClose();
 
 						} else {
+
+							// dont run again on escape
+							if( 27 == key )
+								return false;
 
 							// append close button
 							if ( !$( clearItem ).length ) {
