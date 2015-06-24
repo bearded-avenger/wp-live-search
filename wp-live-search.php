@@ -10,7 +10,7 @@
  * Plugin Name:       WP Live Search
  * Plugin URI:        http://nickhaskins.com
  * Description:       A super light-weight live search plugin that utilizes the WP REST API
- * Version:           0.8
+ * Version:           0.9
  * GitHub Plugin URI: https://github.com/bearded-avenger/wp-live-search
  */
 
@@ -20,7 +20,7 @@ if ( ! defined( 'WPINC' ) ) {
 }
 
 // Set some constants
-define('WP_LIVE_SEARCH_VERSION', '0.8');
+define('WP_LIVE_SEARCH_VERSION', '0.9');
 define('WP_LIVE_SEARCH_DIR', plugin_dir_path( __FILE__ ));
 define('WP_LIVE_SEARCH_URL', plugins_url( '', __FILE__ ));
 

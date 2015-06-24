@@ -114,6 +114,10 @@ Yep! Just copy over the function from underscore-template.php (without the funct
 
 == Changelog ==
 
+= 0.9 =
+* added some CSS classes wpls--empty and wpls--full to the custom target div to aid in custom theming
+* added logic to prevent searching on escape or arrow keys
+
 = 0.8 =
 * added "dropdown" option mode for use in small spaces
 * added "results_style" option for use in small spaces
